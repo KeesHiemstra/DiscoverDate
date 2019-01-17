@@ -5,21 +5,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeekNumber_1930402
+namespace WeekNumber_1819601
 {
   class Program
   {
 
     public static void Main(string[] args)
     {
-      Console.WriteLine($"Birthday: {DateTime.Parse("2018-08-24").WeekNumberString()}");
-      Console.WriteLine($"Today: {DateTime.Now.WeekNumberString()}");
 
-      Console.Write("\nPress any key...");
+      DateTime startDate = new DateTime(2010, 12, 31);
+      for (int i = 0; i < 25; i++)
+      {
+        Console.WriteLine($"{startDate.ToString("yyyy")} {startDate.WeekNumberString()} " +
+          $"{startDate.AddDays(1).WeekNumberString()} {startDate.DayOfWeek}");
+        startDate = startDate.AddYears(1);
+      }
+
+      Console.WriteLine(DateTime.Parse("2018-08-24").WeekNumberString());
+
+      Console.WriteLine();
+      Console.Write("Press any key...");
       Console.ReadKey();
     }
   }
 
+  /// <summary>
+  /// Return the WeekNumber from Date
+  /// </summary>
   public static class DateTimeExtensions
   {
     public static string WeekNumberString(this DateTime date)
@@ -45,6 +57,10 @@ namespace WeekNumber_1930402
         {
           year--;
         }
+      }
+      else if (week == 1)
+      {
+
       }
 
       string weekStr = week.ToString();
