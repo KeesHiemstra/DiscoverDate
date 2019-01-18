@@ -12,6 +12,13 @@ namespace WeekNumber_1930402
 
     public static void Main(string[] args)
     {
+      DateTimeWeekNumber dtwn = new DateTimeWeekNumber(DateTime.Now.AddDays(3));
+      Console.WriteLine(dtwn.DayNo);
+      Console.WriteLine(dtwn.WeekNo);
+      Console.WriteLine(dtwn.YearNo);
+
+      Console.WriteLine(dtwn.ToString());
+
       Console.WriteLine($"Birthday: {DateTime.Parse("2018-08-24").WeekNumberString()}");
       Console.WriteLine($"Today: {DateTime.Now.WeekNumberString()}");
 
