@@ -24,6 +24,14 @@ namespace WeekNumber_1930402
     /// </summary>
     public int YearNo { get; private set; }
 
+    public string DayNoString
+    {
+      get
+      {
+        return DayNo.ToString();
+      }
+    }
+
     public string WeekNoString
     {
       get
@@ -37,6 +45,54 @@ namespace WeekNumber_1930402
       get
       {
         return $"0{WeekNoString}".Substring(WeekNoString.Length - 1);
+      }
+    }
+
+    public string YearNoString
+    {
+      get
+      {
+        return YearNo.ToString();
+      }
+    }
+
+    public string YearNoString2
+    {
+      get
+      {
+        return YearNoString.Substring(2, 2);
+      }
+    }
+
+    public string ISOWeekNoExtended
+    {
+      get
+      {
+        return $"{YearNoString}-W{WeekNoString2}-{DayNoString}";
+      }
+    }
+
+    public string ISOWeekNoCompact
+    {
+      get
+      {
+        return $"{YearNoString}W{WeekNoString2}{DayNoString}";
+      }
+    }
+
+    public string WeekNoExtended
+    {
+      get
+      {
+        return $"{YearNoString}{WeekNoString2}{DayNoString}";
+      }
+    }
+
+    public string WeekNoCompact
+    {
+      get
+      {
+        return $"{YearNoString2}{WeekNoString2}{DayNoString}";
       }
     }
 
@@ -76,7 +132,7 @@ namespace WeekNumber_1930402
 
     public override string ToString()
     {
-      return $"{YearNo.ToString().Substring(2, 2)}{WeekNoString2}{DayNo.ToString()}";
+      return ISOWeekNoExtended;
     }
   }
 }
