@@ -50,7 +50,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WeekNumber_1930402\WeekNumber_1903402.csproj">
+    <ProjectReference Include="..\WeekNumber_1903402\WeekNumber_1903402.csproj">
       <Project>{c76f6128-012f-47e9-a4f7-3a78065ab9ef}</Project>
       <Name>WeekNumber_1903402</Name>
     </ProjectReference>
