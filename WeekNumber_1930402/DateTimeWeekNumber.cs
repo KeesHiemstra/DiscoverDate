@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeekNumber_1930402
+namespace WeekNumber_1903402
 {
   public class DateTimeWeekNumber
   {

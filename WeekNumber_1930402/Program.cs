@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeekNumber_1930402
+namespace WeekNumber_1903402
 {
   class Program
   {
@@ -28,6 +28,9 @@ namespace WeekNumber_1930402
       Console.WriteLine($"WeekNoString2    : {dtwn.WeekNoString2}");
       Console.WriteLine($"YearNo           : {dtwn.YearNo}");
       Console.WriteLine($"Today (ToString) : {dtwn.ToString()}");
+
+      Console.WriteLine();
+      Console.WriteLine($"WeekNoCompact    : {dtwn.WeekNoCompact}");
 
       Console.Write("\nPress any key...");
       Console.ReadKey();
