@@ -135,7 +135,7 @@ namespace WeekNumber_1903402
       return ISOWeekNoExtended;
     }
 
-    public static DateTime? CalculateDate(string reference)
+    public static DateTime? WeekNoCompactToDate(string reference)
     {
       int Year = -1;
       int.TryParse(reference.Substring(0, 2), out Year);

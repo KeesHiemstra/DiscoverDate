@@ -15,7 +15,7 @@ namespace WeekNumber_1903601
       string Reference = "1903401";
 
       Console.Write($"Reference {Reference} => ");
-      DateTime? date = DateTimeWeekNumber.CalculateDate(Reference);
+      DateTime? date = DateTimeWeekNumber.WeekNoCompactToDate(Reference);
       if (date == null)
       {
         Console.WriteLine("Is invalid");
