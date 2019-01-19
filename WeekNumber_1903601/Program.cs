@@ -15,7 +15,7 @@ namespace WeekNumber_1903601
       string Reference = "1903401";
 
       Console.Write($"Reference {Reference} => ");
-      DateTime? date = CalculateDate(Reference);
+      DateTime? date = DateTimeWeekNumber.CalculateDate(Reference);
       if (date == null)
       {
         Console.WriteLine("Is invalid");
@@ -27,42 +27,6 @@ namespace WeekNumber_1903601
 
       Console.Write("\nPress any key...");
       Console.ReadKey();
-    }
-
-    private static DateTime? CalculateDate(string reference)
-    {
-      int Year = -1;
-      int.TryParse(reference.Substring(0, 2), out Year);
-      if (Year == -1)
-      {
-        return null;
-      }
-
-      Year = Year + 2000;
-
-      int Week = -1;
-      int.TryParse(reference.Substring(2, 2), out Week);
-      if (Week == -1)
-      {
-        return null;
-      }
-
-      int Day = -1;
-      int.TryParse(reference.Substring(4, 1), out Day);
-      if (Day == -1)
-      {
-        return null;
-      }
-
-      DateTime ThisYear = new DateTime(Year, 1, 1);
-      DateTimeWeekNumber dwn = new DateTimeWeekNumber(ThisYear);
-
-      //Begin of the week
-      ThisYear = ThisYear.AddDays(1 - dwn.DayNo);
-
-      int Days = (Week - 1) * 7 + (Day - 1);
-
-      return ThisYear.AddDays(Days);
     }
   }
 }
